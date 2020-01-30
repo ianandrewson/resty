@@ -1,6 +1,13 @@
 import React from 'react';
+import Resty from '../containers/Resty.js';
+import Header from '../components/Header.js';
+
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Header />
+      <Resty />
+    </>
+  );
 }
-  
