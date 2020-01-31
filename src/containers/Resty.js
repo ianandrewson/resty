@@ -13,16 +13,24 @@ export default class Resty extends Component {
     result: ''
   }
 
-  onChange = () => {
-
+  onChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
   }
 
-  onSubmit = () => {
+  onSubmit = event => {
+    event.preventDefault();
 
+    this.setState(state => ({
+      historyItems: [...state.historyItems, {
+        url: state.url,
+        method: state.method,
+        body: state.body
+      }]
+    }));
   }
 
-  onSelect = () => {
-
+  onHistorySelect = ({ target }) => {
+    this.setState(target);
   }
 
   render(){
@@ -39,7 +47,7 @@ export default class Resty extends Component {
         />
         <HistoryList 
           historyItems={historyItems} 
-          onSelect={this.onSelect}
+          onHistorySelect={this.onHistorySelect}
         />
         <Result 
           result={result}/>

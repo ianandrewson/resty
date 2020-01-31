@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import HistoryItem from './HistoryItem.js';
 
-const HistoryList = ({ onSelect, historyItems }) => {
+const HistoryList = ({ onHistorySelect, historyItems }) => {
   const items = historyItems.map((item, i) => (
-    <li key={i} onSelect={onSelect}>
+    <li key={i} onHistorySelect={onHistorySelect}>
       <HistoryItem content={item} />
     </li>
   ));
@@ -17,7 +17,7 @@ const HistoryList = ({ onSelect, historyItems }) => {
 };
 
 HistoryList.propTypes = {
-  onSelect: PropTypes.func.isRequired,
+  onHistorySelect: PropTypes.func.isRequired,
   historyItems: PropTypes.arrayOf(PropTypes.shape({
     url: PropTypes.string.isRequired,
     method: PropTypes.string.isRequired,
@@ -25,4 +25,4 @@ HistoryList.propTypes = {
   })).isRequired
 };
 
-export default HistoryList
+export default HistoryList;
