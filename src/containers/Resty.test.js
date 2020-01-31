@@ -3,6 +3,8 @@ import { shallow } from 'enzyme';
 import Resty from './Resty.js';
 import HistoryList from '../components/history/HistoryList.js';
 
+jest.mock('../services/anApiOfFireAndIce.js');
+
 describe('Resty tests', () => {
 
   it('can change url in state', () => {
@@ -74,6 +76,7 @@ describe('Resty tests', () => {
         method: 'testPost'
       }]
     });
+
     resty.onHistorySelect({
       target: wrapper.state('historyItems')[0]
     });
@@ -92,14 +95,12 @@ describe('Resty tests', () => {
   });
 
   it('can fetch from the API and set result state', () => {
-    jest.mock('../services/anApiOfFireAndIce.js');
-    
     const wrapper = shallow(<Resty />);
     const resty = wrapper.instance();
 
     return resty.fetch()
       .then(() => {
-        expect(wrapper.state('historyItems')).toEqual([
+        expect(wrapper.state('result')).toEqual([
           { character:'John Snow', house: 'Stark' },
           { character: 'Victarion Greyjoy', house: 'Greyjoy' },
           { character: 'Prince Oberyn', house: 'Martell' }

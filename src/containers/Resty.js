@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReqForm from '../components/form/ReqForm.js';
 import Result from '../components/Result.js';
 import HistoryList from '../components/history/HistoryList.js';
+import getCharacters from '../services/anApiOfFireAndIce.js';
 
 export default class Resty extends Component {
 
@@ -31,6 +32,13 @@ export default class Resty extends Component {
 
   onHistorySelect = ({ target }) => {
     this.setState(target);
+  }
+
+  fetch = () => {
+    return getCharacters()
+      .then(characters => {
+        this.setState({ result: characters });
+      });
   }
 
   render(){

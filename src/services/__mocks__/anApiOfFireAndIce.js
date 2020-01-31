@@ -1,5 +1,7 @@
-export const getCharacter = () => Promise.resolve([
+const getCharacters = () => Promise.resolve([
   { character:'John Snow', house: 'Stark' },
   { character: 'Victarion Greyjoy', house: 'Greyjoy' },
   { character: 'Prince Oberyn', house: 'Martell' }
 ]);
+
+export default getCharacters;

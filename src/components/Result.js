@@ -6,7 +6,7 @@ const Result = ({ result }) => (
 );
 
 Result.propTypes = {
-  result: PropTypes.string.isRequired
+  result: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.array]).isRequired
 };
 
 export default Result;
