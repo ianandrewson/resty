@@ -62,6 +62,8 @@ describe('Resty tests', () => {
   });
 
   it('can fetch from the API and set result state', () => {
+    jest.mock('../services/anApiOfFireAndIce.js');
+    
     const wrapper = shallow(<Resty />);
     const resty = wrapper.instance();
 
