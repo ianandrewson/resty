@@ -100,11 +100,11 @@ describe('Resty tests', () => {
 
     return resty.fetch()
       .then(() => {
-        expect(wrapper.state('result')).toEqual([
+        expect(wrapper.state('result')).toEqual(JSON.stringify([
           { character:'John Snow', house: 'Stark' },
           { character: 'Victarion Greyjoy', house: 'Greyjoy' },
           { character: 'Prince Oberyn', house: 'Martell' }
-        ]);
+        ]));
       });
   });
 });
