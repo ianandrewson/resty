@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-const ReqForm = ({ onChange, onSubmit, url, body }) => (
+const ReqForm = ({ onChange, onSubmit, url, body, method }) => (
   <form key='ReqForm'>
     <input type='text' value={url} placeholder='URL' name={url} onChange={onChange} />
     <input type='radio' value='get' name='get' onChange={onChange} />

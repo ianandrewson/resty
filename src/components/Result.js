@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Result = ({ result }) => (
-  <textarea>{result}</textarea>
+  <textarea readOnly value={result}/>
 );
 
 Result.propTypes = {

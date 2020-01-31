@@ -7,17 +7,43 @@ export default class Resty extends Component {
 
   state = {
     historyItems: [],
+    url: '',
+    method: '',
+    body: '',
+    result: ''
+  }
+
+  onChange = () => {
+
+  }
+
+  onSubmit = () => {
+
+  }
+
+  onSelect = () => {
+
   }
 
   render(){
-    const { historyItems } = this.state;
+    const { historyItems, url, method, body, result } = this.state;
 
     return (
       <>
-        <ReqForm />
+        <ReqForm 
+          url={url}
+          method={method}
+          body={body}
+          onChange = {this.onChange}
+          onSubmit = {this.onSubmit}
+        />
         <HistoryList 
-          historyItems={historyItems} />
-        <Result />
+          historyItems={historyItems} 
+          onSelect={this.onSelect}
+        />
+        <Result 
+          readOnly={true}
+          result={result}/>
         <p>HELLO WORLD</p>
       </>
     );
