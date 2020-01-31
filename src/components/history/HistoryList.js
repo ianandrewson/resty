@@ -5,7 +5,7 @@ import HistoryItem from './HistoryItem.js';
 const HistoryList = ({ onSelect, historyItems }) => {
   const items = historyItems.map((item, i) => (
     <li key={i} onSelect={onSelect}>
-      <HistoryItem {...item} />
+      <HistoryItem content={item} />
     </li>
   ));
 

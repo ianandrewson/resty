@@ -42,7 +42,6 @@ export default class Resty extends Component {
           onSelect={this.onSelect}
         />
         <Result 
-          readOnly={true}
           result={result}/>
         <p>HELLO WORLD</p>
       </>
