@@ -3,6 +3,8 @@ import ReqForm from '../components/form/ReqForm.js';
 import Result from '../components/Result.js';
 import HistoryList from '../components/history/HistoryList.js';
 import makeRequest from '../services/anApiOfFireAndIce.js';
+import styles from './Resty.css';
+
 
 export default class Resty extends Component {
 
@@ -47,22 +49,23 @@ export default class Resty extends Component {
     const { historyItems, url, method, body, result } = this.state;
 
     return (
-      <>
-        <ReqForm 
-          url={url}
-          method={method}
-          body={body}
-          onChange = {this.onChange}
-          onSubmit = {this.onSubmit}
-        />
+      <section className={styles.wrapper}>
         <HistoryList 
           historyItems={historyItems} 
           onHistorySelect={this.onHistorySelect}
         />
-        <Result 
-          result={result}/>
-        <p>HELLO WORLD</p>
-      </>
+        <div className={styles.reqRes}>
+          <ReqForm 
+            url={url}
+            method={method}
+            body={body}
+            onChange = {this.onChange}
+            onSubmit = {this.onSubmit}
+          />
+          <Result 
+            result={result}/>
+        </div>
+      </section>
     );
   }
 }

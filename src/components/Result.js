@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Result.css';
 
 const Result = ({ result }) => (
-  <textarea readOnly value={result}/>
+  <textarea readOnly className={styles.result} value={result}/>
 );
 
 Result.propTypes = {

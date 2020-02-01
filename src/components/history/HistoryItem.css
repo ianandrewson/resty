@@ -1,0 +1,14 @@
+.historyItem {
+  label{
+    border: 1px solid black;
+    margin: 3px;
+    padding: 3px;
+    display: block;
+  }
+  input {
+    display: none;
+    &:checked + label{
+      background-color: red;
+    }
+  }
+} 

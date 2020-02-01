@@ -1,0 +1,36 @@
+.reqForm{
+  border: 2px solid purple;
+  display: flex;
+  width: 100%;
+  height: 25%;
+  flex-direction: column;
+}
+
+.radioWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  label{
+    width: 75px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    margin: 3px;
+
+    input{
+      display: none;
+    }
+  }
+}
+
+label > input:checked{
+  background-color: lightblue;
+}
+
+.result{
+  height: 200px;
+  width: 400px;
+}
