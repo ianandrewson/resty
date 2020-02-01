@@ -1,0 +1,10 @@
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background-color: #eeeeee;
+}
+
+.reqRes{
+  display: flex;
+  flex-direction: column;
+}
