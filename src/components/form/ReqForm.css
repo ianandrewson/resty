@@ -1,15 +1,16 @@
 .reqForm{
-  border: 2px solid purple;
   display: flex;
   width: 100%;
   height: 25%;
   flex-direction: column;
+  margin: 10px;
 }
 
 .radioWrapper{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin: 5px;
 
   label{
     width: 75px;
